@@ -47,14 +47,18 @@ class Perceptron:
 
         # TODO: Put your code (fit algorithm)
 
+        for _ in range(self.n_iter):
+            for imp, label in zip(X, y):
+                update = self.eta * (label - self.predict(imp))
+                self.w_[1:] += update * imp
+                self.w_[0] += update
 
     def predict(self, X):
-        """Return class label.
-            First calculate the output: (X * weights) + threshold
-            Second apply the step function
-            Return a list with classes
-        """
+        #Return class label.
+        #    First calculate the output: (X * weights) + threshold
+        #    Second apply the step function
+        #    Return a list with classes
 
         # TODO: Put your code
 
-        return np.random.randint(0, 2, size=X.shape[0])  # remove
+        return np.where(np.dot(X, self.w_[1:]) + self.w_[0] >= 0.0, 1, -1)
