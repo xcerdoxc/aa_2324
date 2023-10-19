@@ -58,7 +58,7 @@ class Adaline(object):
 
             for xi, target in zip(X, y):
 
-               # TODO: Put your code here
+                # TODO: Put your code here
 
 
 
