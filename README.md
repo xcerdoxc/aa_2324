@@ -15,4 +15,5 @@ Durant aquest curs treballarem amb les següents tecnologies:
 
 - **Setmana 1 Perceptron**: Recordarem conceptes elementals de l'aprenentatge automàtic que serviran per comprendre millor altres conceptes més avançats. També treballarem amb operacions elementals de la llibreria _Numpy_ i visualitzacions bàsiques de _Matplotlib_.
 - **Setmana 2 AdaLine**: Seguirem repassant conceptes elementals, en aquest cas el concepte de **descens de gradient** i també de l'aprenentatge en _batch_.
-- **Setmana 3 SVM Lineal**: Hem comparat el pla de separació que ens proporciona la solució d'AdaLine de la setmana passada amb les SVM lineals. Aplicam les SVM lineals a un problema de dimensionalitat 5.
+- **Setmana 3 SVM Lineal**: Compararem el pla de separació que ens proporciona la solució d'AdaLine de la setmana passada amb les SVM lineals. Apliquem les SVM lineals a un problema de dimensionalitat 5.
+- **Setmana 4 més enllà de SVM Lineal**: Implementarem els nostres propis Kernels i els compararem amb l'implementació a Sci-kit learn.
