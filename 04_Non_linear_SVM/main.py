@@ -15,7 +15,7 @@ def kernel_gaussia(x, z, gamma=.1):
     norm_squared = distance_matrix(x, z)
     return np.exp(-gamma * norm_squared)
 
-def kernel_poly(x, z, degree=3, gamma=.1):
+def kernel_poly(x, z, degree=2, gamma=.1):
     return (gamma*(x.dot(z.T))+0)**degree
 
 X, y = make_classification(n_samples=100, n_features=2, n_redundant=0, n_repeated=0,
@@ -71,7 +71,7 @@ errors = np.count_nonzero(differences)
 print(f'My Gaussia: {(len(y_predicted)-errors)/len(y_predicted)}')
 
 
-svm = SVC(C=1.0, kernel='poly', degree=3, gamma=.1, random_state=33)
+svm = SVC(C=1.0, kernel='poly', degree=2, gamma=.1, random_state=33)
 svm.fit(X_transformed, y_train)
 y_predicted = svm.predict(X_test_transformed)
 
