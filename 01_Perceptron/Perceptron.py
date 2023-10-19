@@ -11,7 +11,11 @@ class Perceptron:
         Learning rate (between 0.0 and 1.0)
     n_iter : int
         Passes over the training dataset.
+    """
+    eta : float
+    n_iter : int
 
+    """ 
     Attributes
     -----------
     w_ : 1d-array
@@ -20,6 +24,8 @@ class Perceptron:
         Number of miss classifications in each epoch.
 
     """
+    w_ : []
+    errors_ : list
 
     def __init__(self, eta=0.01, n_iter=10):
         self.eta = eta
@@ -44,9 +50,17 @@ class Perceptron:
 
         """
         self.w_ = np.zeros(1 + X.shape[1])  # First position corresponds to threshold
+        self.errors = 0
 
-        # TODO: Put your code (fit algorithm)
+        for _ in range(self.n_iter):
+            errors = 0
+            for i in zip(X, y):
+                predict = self.predict(X)
+                self.w_[1:] += self.eta * (y[i] - predict) * X[i]
+                self.w_[0] += self.eta * (y[i] - predict)
+            self.errors_.append(errors)
 
+        return self
 
     def predict(self, X):
         """Return class label.
@@ -55,6 +69,5 @@ class Perceptron:
             Return a list with classes
         """
 
-        # TODO: Put your code
-
-        return np.random.randint(0, 2, size=X.shape[0])  # remove
+        sortida = np.dot(X, self.w_[1:]) + self.w_[0]
+        return 1 if sortida > 0 else 0
