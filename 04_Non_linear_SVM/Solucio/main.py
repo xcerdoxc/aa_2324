@@ -61,13 +61,13 @@ for kernel in kernels.keys():
 
 #  Exercici final
 print("Exercici final: Canviam la dimensionalitat de les mostres i empram un classificador lineal")
-poly = PolynomialFeatures(2)
+poly = PolynomialFeatures(3)
 X_poly = poly.fit_transform(X_transformed)
 X_test_poly = poly.transform(X_test_transformed)
-print(f"TEST features grau 2: {kernel}")
+print(f"TEST features grau 3: {kernel}")
 svm_poly = SVC(C=1.0, kernel="linear", random_state=33)
-svm_poly.fit(X_transformed, y_train)
-y_meu = svm_poly.predict(X_test_transformed)
+svm_poly.fit(X_poly, y_train)
+y_meu = svm_poly.predict(X_test_poly)
 precision_poly = precision_score(y_test, y_meu)
 print(f"    Precisió   : {precision_poly}")
 
