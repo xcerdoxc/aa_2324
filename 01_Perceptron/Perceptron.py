@@ -34,7 +34,7 @@ class Perceptron:
 
     def fit(self, X, y):
 
-        """Fit training data.
+        """Fit training dat.
 
         Parameters
         ----------
@@ -43,10 +43,6 @@ class Perceptron:
             n_features is the number of features.
         y : array-like, shape = [n_samples]
             Target values.
-
-        Returns
-        -------
-        self : object
 
         """
         self.w_ = np.zeros(1 + X.shape[1])  # First position corresponds to threshold
@@ -63,11 +59,10 @@ class Perceptron:
         return self
 
     def predict(self, X):
-        """Return class label.
-            First calculate the output: (X * weights) + threshold
-            Second apply the step function
-            Return a list with classes
-        """
+        #Return class label.
+        #    First calculate the output: (X * weights) + threshold
+        #    Second apply the step function
+        #    Return a list with classes
 
         sortida = np.dot(X, self.w_[1:]) + self.w_[0]
         return 1 if sortida > 0 else 0
