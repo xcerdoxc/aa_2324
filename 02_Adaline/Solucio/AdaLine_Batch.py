@@ -26,7 +26,7 @@ class Adaline:
         self.w_ = None
 
     def fit(self, X, y):
-        """ Fit training data.
+        """ Fit training dat.
 
         Parameters
         ----------
