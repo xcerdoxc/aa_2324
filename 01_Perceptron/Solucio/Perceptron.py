@@ -25,7 +25,7 @@ class Perceptron:
         self.errors_ = None
 
     def fit(self, X, y):
-        """Fit training data.
+        """Fit training dat.
 
         Parameters
         ----------

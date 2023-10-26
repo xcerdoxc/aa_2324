@@ -28,7 +28,7 @@ class Perceptron:
 
     def fit(self, X, y):
 
-        """Fit training data.
+        """Fit training dat.
 
         Parameters
         ----------
