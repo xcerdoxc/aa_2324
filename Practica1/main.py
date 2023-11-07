@@ -4,57 +4,49 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
-
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-file_path = 'dat/fashion-mnist_train.csv'
 
-# Read the CSV file into a DataFrame
-df = pd.read_csv(file_path)
-summary = df.head()
-print(summary)
+train_path = 'dat/fashion-mnist_train.csv'
+test_path = 'dat/fashion-mnist_test.csv'
 
-# Separate the labels (first column) and image pixel columns
-labels = df.iloc[:, 0]  # Assuming the labels are in the first column
-image_data = df.iloc[:, 1:]  # Assuming the rest of the columns are image pixels
+# Dades entrenament
+ds_train = pd.read_csv(train_path)
 
-# Define the dimensions of the images
-image_width = 28
-image_height = 28
-
-# Create a figure to display the images in a row
-plt.figure(figsize=(15, 5))  # Adjust the figure size as needed
-
-# Loop through the first 10 rows and display each image next to each other
-for i in range(10):
-    plt.subplot(2, 5, i + 1)  # Create a subplot for each image
-    image_data_array = np.array(image_data.iloc[i])
-    image = image_data_array.reshape((image_height, image_width))
-    label = labels.iloc[i]
-    plt.imshow(image, cmap='gray')
-    plt.title(f'Label: {label}')
-
-plt.show()
-
-X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, n_repeated=0,
-                           n_classes=2, n_clusters_per_class=1, class_sep=2,
-                           random_state=5)
-
-# Tractament de les dades: Separació i estandaritzat
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=1)
+x_train = ds_train.iloc[:, 1:]  # Píxeles imágenes
+y_train = ds_train.iloc[:, 0]  # Labels en la primera columna
 
 scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
+x_train_scaled = scaler.fit_transform(x_train)
 
-# Entrenament i predicció, aquí no hi ha ajustament de paràmetres
-clf = SGDClassifier(loss="perceptron", eta0=1, max_iter=1000, learning_rate="constant", random_state=5)
-clf.fit(X_train_scaled, y_train)
-prediction = clf.predict(X_test_scaled)
+# Dades test
+ds_test = pd.read_csv(train_path)
+
+x_test = ds_test.iloc[:, 1:]  # Píxeles imágenes
+y_test = ds_test.iloc[:, 0]  # Labels en la primera columna
+
+x_test_scaled = scaler.fit_transform(x_test)
+
+param_grid = {
+    'C': [0.1, 1, 10],             # Regularization parameter
+    'kernel': ['linear', 'rbf'],    # Kernel type
+    'gamma': [0.001, 0.01, 0.1]    # Kernel coefficient
+}
+
+svm = SVC()
+grid_search = GridSearchCV(svm, param_grid, cv=5, verbose=1, n_jobs=-1)
+grid_search.fit(x_train_scaled, y_train)
+
+# Todo el dataset con el mejor estimador
+best_svm_model = grid_search.best_estimator_
+best_svm_model.fit(x_train_scaled, y_train)
+
+# Predicción
+y_pred = best_svm_model.predict(x_test)
 
 # Avaluacio
-cf_matrix = confusion_matrix(y_test, prediction)
+cf_matrix = confusion_matrix(y_test, y_pred)
 print(cf_matrix)
-accuracy = accuracy_score(y_test, prediction)
+accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy: ", accuracy)
