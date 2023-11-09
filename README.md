@@ -17,3 +17,5 @@ Durant aquest curs treballarem amb les següents tecnologies:
 - **Setmana 2 AdaLine**: Seguirem repassant conceptes elementals, en aquest cas el concepte de **descens de gradient** i també de l'aprenentatge en _batch_.
 - **Setmana 3 SVM Lineal**: Compararem el pla de separació que ens proporciona la solució d'AdaLine de la setmana passada amb les SVM lineals. Apliquem les SVM lineals a un problema de dimensionalitat 5.
 - **Setmana 4 més enllà de SVM Lineal**: Implementarem els nostres propis Kernels i els compararem amb l'implementació a Sci-kit learn.
+- **Setmana 5 Pràctica 1**: Veure enunciat.
+- **Setmana 6 Pytorch**: Petit tutorial de Pytorch i primers exercicis creant els nostres primers MLP.
