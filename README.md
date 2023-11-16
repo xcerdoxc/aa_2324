@@ -19,3 +19,5 @@ Durant aquest curs treballarem amb les següents tecnologies:
 - **Setmana 4 més enllà de SVM Lineal**: Implementarem els nostres propis Kernels i els compararem amb l'implementació a Sci-kit learn.
 - **Setmana 5 Pràctica 1**: Veure enunciat.
 - **Setmana 6 Pytorch**: Petit tutorial de Pytorch i primers exercicis creant els nostres primers MLP.
+- **Setmana 7 MLP**: Seguim amb Pytorch, cream l'estructura d'un projecte i empram un dataset d'imatges propi de Pytorch.
+- **Setmana 8 CNN**: Emprant les mateixes dades que la setmana anterior, cream la nostra primera xarxa convolucional.
