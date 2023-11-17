@@ -1,0 +1,2 @@
+confon 3 amb 8 (forest amb livingRoom)
+256x256 empitjora (deixam 64,64)
