@@ -1,2 +1,11 @@
 confon 3 amb 8 (forest amb livingRoom)
 256x256 empitjora (deixam 64,64)
+hog, no escalat, load_and_preprocess(folder_path, target_size=(64, 64), hog_orientations=9, hog_pixels_per_cell=(8, 8), hog_cells_per_block=(2, 2)): Accuracy:  0.6160804020100502
+hog, escalat, load_and_preprocess(folder_path, target_size=(64, 64), hog_orientations=9, hog_pixels_per_cell=(8, 8), hog_cells_per_block=(2, 2)): Accuracy:  0.6160804020100502
+Escalat no fa res
+load_and_preprocess(folder_path, target_size=(64, 64), hog_orientations=15, hog_pixels_per_cell=(12, 12), hog_cells_per_block=(2, 2)): Accuracy:  0.6268006700167504
+Number of components to capture at least 92% of the variance: 359
+fora PCA: Accuracy:  0.6160804020100502
+amb PCA: Accuracy:  0.6144053601340034
+256x256 hog:16, 16, 16, 16 Accuracy:  0.6522613065326633
+128x128 hog:16, 16, 8, 8 Accuracy:  0.6596314907872697
