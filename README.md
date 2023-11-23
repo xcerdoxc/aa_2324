@@ -21,3 +21,4 @@ Durant aquest curs treballarem amb les següents tecnologies:
 - **Setmana 6 Pytorch**: Petit tutorial de Pytorch i primers exercicis creant els nostres primers MLP.
 - **Setmana 7 MLP**: Seguim amb Pytorch, cream l'estructura d'un projecte i empram un dataset d'imatges propi de Pytorch.
 - **Setmana 8 CNN**: Emprant les mateixes dades que la setmana anterior, cream la nostra primera xarxa convolucional.
+- **Setmana 9 CNN + TransferLearning**: Repassem la solució a la pràctica anterior i aplicam la tècnica de _transfer learning_ amb dos models ampliament coneguts.
