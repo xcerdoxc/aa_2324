@@ -24,3 +24,4 @@ Durant aquest curs treballarem amb les següents tecnologies:
 - **Setmana 9 CNN + TransferLearning**: Repassem la solució a la pràctica anterior i aplicam la tècnica de _transfer learning_ amb dos models ampliament coneguts.
 - **Setmana 10 FCN**: Un simulacre de la pràctica final.
 - **Setmana 11 Segmentació**: Seguim amb les dades de la setmana anterior, però afegint una nova tasca.
+- **Setmana 12:** Enunciat de la Pràctica 2 i YOLO
