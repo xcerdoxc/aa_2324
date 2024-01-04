@@ -1,0 +1,10 @@
+path: ../datasets/Yolo  # dataset root dir
+train: images  # train images (relative to 'path') 128 images
+val: images  # val images (relative to 'path') 128 images
+#train: "B:/5t Informatica/Aprenentatge automatic/aa_2324/Practica2/data/old_pets/images"
+#val: "B:/5t Informatica/Aprenentatge automatic/aa_2324/Practica2/data/pets/Yolo/train_val"
+
+nc: 2
+names:
+  0: moix
+  1: ca
